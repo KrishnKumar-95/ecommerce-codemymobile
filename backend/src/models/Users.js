@@ -30,6 +30,18 @@ const userSchema = new mongoose.Schema({
         min: 1000000000,
         max: 99999999999
     },
+    password:{
+        type: String,
+        required: true,
+        minlength: 6,
+        maxlength: 150
+    },
+    confirmpassword:{
+        type: String,
+        required: true,
+        minlength: 6,
+        maxlength: 150
+    },
     address:{
         type: String,
         required: true,

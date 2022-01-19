@@ -4,8 +4,13 @@ const hbs = require("hbs");
 
 require("../src/db/connection")
 
+
 const app = express();
 const port = process.env.PORT || 3000;
+
+// MIDDLEWARE TO RECIEVE DATA AS JSON DOCUMENT
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // TEMPLATE-ENGINE-PATH
 const TemplateEnginePath = path.join(__dirname,"../../frontend/templates/views");
