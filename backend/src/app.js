@@ -2,8 +2,11 @@ const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
 
-require("../src/db/connection")
+// CONNECTION WITH MONGODB
+// require("./db/conn_mongo");
 
+// CONNECTION WITH MYSQL
+require("./db/conn_mysql");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -31,4 +34,4 @@ app.use("/",require(RoutesPath));
 
 app.listen(port,()=>{
     console.log(`Server is listening on http://localhost:${port}`);
-})
+});
